@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style scoped>
+
+
+
   .container{
       display: flex;
       width: 100%;
@@ -67,7 +70,7 @@ export default {
      background-color: #f3dc68;
  }
 
- @media only screen and (max-width: 600px) {
+ @media only screen and (max-width: 800px) {
      .container{
          height: 100vw;
      }

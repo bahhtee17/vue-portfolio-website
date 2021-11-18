@@ -8,11 +8,12 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 body{
   padding: 0;
   margin: 0;
 }
+
 
 #app #nav{
   font-family: Roboto;
@@ -47,7 +48,7 @@ color: #ffffcd;
   color: #ffffcd;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
   .home{
     font-size: 3vw;
   }
