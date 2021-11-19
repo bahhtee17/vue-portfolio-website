@@ -39,6 +39,7 @@ export default {
     font-family: Roboto;
     color:#b66358;
     font-weight: 100;
+    text-transform: uppercase;
 }
 
 .text p{
