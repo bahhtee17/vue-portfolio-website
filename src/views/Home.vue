@@ -15,6 +15,10 @@
     <div class="thirdSection">
        <ThirdSection />
     </div>
+
+    <div class="plans">
+      <Plans />
+    </div>
   </div>
 
 </template>
@@ -25,13 +29,15 @@ import Header from '../components/Header.vue'
 import FirstSection from '../components/FirstSection.vue'
 import SecondSection from '../components/SecondSection.vue'
 import ThirdSection from '../components/ThirdSection.vue'
+import Plans from '../components/Plans.vue'
 export default {
   name: 'Home',
   components: {
     Header,
     FirstSection,
     SecondSection,
-    ThirdSection
+    ThirdSection,
+    Plans
   }
 }
 </script>

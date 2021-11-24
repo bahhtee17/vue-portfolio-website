@@ -16,8 +16,11 @@ body{
 
 
 #app #nav{
+
+
+
   font-family: Roboto;
- background-color: #A6998A;
+ background: linear-gradient(to right, rgb(118, 118, 245), rgb(42, 97, 199));
   height: 50px;
   display: flex;
   justify-content: space-around;

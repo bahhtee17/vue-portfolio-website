@@ -1,11 +1,11 @@
 <template>
   <header class="container">
     <div class="header">
-       <h1>Skyjump</h1>
+       <h1 class=" .animate__bounce animate__backInDown ">Skyjump</h1>
     </div>
 
     <div class="sub-header">
-        <h3>Feel gravity in your skin</h3>
+        <h3 class="animate__backInRight">Feel gravity in your skin</h3>
     </div>
 
     <div class="btn">
@@ -15,8 +15,10 @@
 </template>
 
 <script>
-
+import 'animate.css';
+import { gsap } from "gsap";
 export default {
+
 
 }
 </script>
@@ -37,6 +39,7 @@ export default {
   }
 
  .header h1{
+
      font-family: Roboto;
      color: #C2D2F2;
      height: 2vw;
@@ -45,9 +48,15 @@ export default {
      letter-spacing: 0.2em;
      font-weight: 300;
      text-transform: uppercase;
+     animation-duration: 2s;
+     animation-delay: 0s;
+
  }
 
  .sub-header h3{
+
+     animation-duration: 2s;
+     animation-delay: 0s;
      color: #C2D2F2;
      font-family: Roboto;
      font-style: normal;

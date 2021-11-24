@@ -8,7 +8,7 @@
     <div class="text">
        <h3 class="header">Static Line Parachuting </h3>
        <p> They say that the first solo parachute jump is always the one you remember the most. There is no chance of you forgetting this opportunity. This splendid package puts you on a two day tuition course at the end of which you will make a solo parachute jump. The first day you'll do both theoretical and practical sessions on a range of subjects – safety regulation, sky diving techniques, steering, landing and many others in order to prepare you for the jump ahead. On the second day you'll be taken up to 3000ft, the aeroplane door will be opened and you will launch yourself into the void. The static line will release the parachute and you will drift slowly to earth, admiring the beautiful view and the complete tranquillity as you do so.</p>
-       <a :href="url" class="btn">Read More</a>
+
     </div>
 
 
@@ -20,7 +20,7 @@
 export default {
     data(){
         return{
-            url: 'https://simple.wikipedia.org/wiki/Skydiving'
+
         }
     }
 
