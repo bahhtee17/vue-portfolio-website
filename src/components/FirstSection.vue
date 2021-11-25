@@ -22,16 +22,27 @@ export default {
 
     mounted(){
         gsap.registerPlugin(ScrollTrigger);
+         gsap.set('.container1', {
+             opacity:0,
+             x:-500,
+
+         })
+
         gsap.to('.container1', {
+            duration: 3,
+            ease: "power2.out",
+            x: 0,
             opacity: 1,
             scrollTrigger: {
                 trigger: '.container1',
-                start:'top 60%',
+                start:'top 90%',
                 end: 'top 20%',
                 markers: true,
                 scrub: true
             }
         })
+
+
     }
 
 }
@@ -46,8 +57,6 @@ export default {
     justify-content: center;
     color: black;
     opacity: 0;
-
-
 
 }
 
@@ -80,7 +89,7 @@ color:rgb(44, 78, 78)
 }
 
 @media only screen and (max-width: 800px){
-    .container{
+    .container1{
         height: 110vw;
         display: inline-flex;
         flex-direction: column;
