@@ -1,5 +1,5 @@
 <template>
- <div class="container">
+ <div class="container3">
 
     <div class="img-container">
         <img class="image" src="../assets/images/section_03.jpg"/>
@@ -17,18 +17,36 @@
 </template>
 
 <script>
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
 export default {
-    data(){
-        return{
+    mounted(){
+        gsap.registerPlugin(ScrollTrigger);
 
-        }
+        gsap.set('.container3', {
+            opacity: 0,
+            x: -700
+        })
+
+        gsap.to('.container3', {
+            direction: 3,
+            ease: "power2.out",
+            x: 0,
+            opacity:1,
+            scrollTrigger: {
+                trigger: '.container3',
+                start: 'top 90%',
+                end: 'top 20%',
+                scrub: true
+            }
+        })
     }
 
 }
 </script>
 
 <style scoped>
-.container{
+.container3{
     display: flex;
     width: 100%;
     font-size: 60%;
@@ -85,7 +103,7 @@ color:rgb(44, 78, 78)
 }
 
 @media only screen and (max-width: 800px){
-    .container{
+    .container3{
         height: 110vw;
         display: inline-flex;
         flex-direction: column;

@@ -26,7 +26,7 @@ mounted(){
 
  gsap.set('.container2', {
      opacity: 0,
-     x: 500,
+     x: 700,
  })
 
  gsap.to('.container2', {
