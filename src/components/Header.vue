@@ -1,5 +1,5 @@
 <template>
-  <header class="container">
+  <header class="container-header">
     <div class="header">
        <h1 class=" .animate__bounce animate__backInDown ">Skyjump</h1>
     </div>
@@ -9,7 +9,7 @@
     </div>
 
     <div class="btn">
-        <button>Buy now</button>
+        <button class="buy-btn">Buy now</button>
     </div>
   </header>
 </template>
@@ -19,6 +19,32 @@ import 'animate.css';
 import { gsap } from "gsap";
 export default {
 
+mounted(){
+    gsap.set('.container-header', {
+        scale: 0,
+    })
+    gsap.to('.container-header', {
+        duration: 3,
+        ease: "elastic.out(1, 0.3)",
+        opacity: 1,
+        scale: 1,
+    })
+
+    gsap.set('.buy-btn', {
+        opacity: 0,
+        y: 400
+    })
+
+    gsap.to('.buy-btn', {
+        opacity: 1,
+        y: 0,
+        duration: 2,
+        ease: "bounce.out"
+
+
+    })
+
+}
 
 }
 </script>
@@ -27,7 +53,7 @@ export default {
 
 
 
-  .container{
+  .container-header{
       display: flex;
       width: 100%;
       height: 40vw;
@@ -80,7 +106,7 @@ export default {
  }
 
  @media only screen and (max-width: 800px) {
-     .container{
+     .container-header{
          height: 100vw;
      }
 

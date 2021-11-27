@@ -24,7 +24,7 @@ export default {
         gsap.registerPlugin(ScrollTrigger);
          gsap.set('.container1', {
              opacity:0,
-             x:-500,
+             x:-700,
 
          })
 
