@@ -19,6 +19,7 @@
     <div class="plans">
       <Plans />
     </div>
+
   </div>
 
 </template>
@@ -38,7 +39,11 @@ export default {
     SecondSection,
     ThirdSection,
     Plans
-  }
+  },
+
+
+
+
 }
 </script>
 

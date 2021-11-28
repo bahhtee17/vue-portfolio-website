@@ -15,11 +15,15 @@
 </template>
 
 <script>
+
 import 'animate.css';
 import { gsap } from "gsap";
 export default {
 
 mounted(){
+
+
+
     gsap.set('.container-header', {
         scale: 0,
     })
@@ -54,6 +58,7 @@ mounted(){
 
 
   .container-header{
+
       display: flex;
       width: 100%;
       height: 40vw;

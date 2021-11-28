@@ -9,11 +9,18 @@
 </template>
 
 <script>
+
 export default {
+
   data(){
     return{
 
     }
+  },
+
+  mounted(){
+
+
   }
 }
 </script>
@@ -22,7 +29,9 @@ export default {
 body{
   padding: 0;
   margin: 0;
+
 }
+
 
 
 #app #nav{

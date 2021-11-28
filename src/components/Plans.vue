@@ -2,16 +2,16 @@
   <div class="container-plan">
 
 
-    <div @mouseover="animatedMouseOver('.first-time')" @mouseleave="animatedMouseLeave('.first-time')"  class="first-time">
+    <div @mouseenter="animatedMouseOver('.first-time')" @mouseout="animatedMouseLeave('.first-time')"  class="first-time">
 
      </div>
 
 
-     <div  @mouseover="animatedMouseOver('.monthly')" @mouseleave="animatedMouseLeave('.monthly')" class="monthly">
+     <div  @mouseenter="animatedMouseOver('.monthly')" @mouseout="animatedMouseLeave('.monthly')" class="monthly">
 
      </div>
 
-     <div  @mouseover="animatedMouseOver('.yearly')" @mouseleave="animatedMouseLeave('.yearly')" class="yearly">
+     <div  @mouseenter="animatedMouseOver('.yearly')" @mouseout="animatedMouseLeave('.yearly')" class="yearly">
 
      </div>
   </div>
@@ -32,12 +32,17 @@ methods:{
 
     animatedMouseOver(className){
          gsap.to(className, {
-         opacity:0
+         rotate: 90,
+
+
       })
     },
    animatedMouseLeave(el){
      gsap.to(el, {
-         opacity:1
+         rotate: 0,
+         duration: 1,
+         ease: "back.out(1.7)",
+         repeat: 0,
      })
    }
 
@@ -47,7 +52,6 @@ methods:{
 
 mounted(){
      gsap.registerPlugin(ScrollTrigger);
-
 
 
 
