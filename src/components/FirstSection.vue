@@ -7,7 +7,7 @@
 
     <div class="text">
        <h3 class="header">Tandem Skydive</h3>
-       <p> For the spirited adrenaline junkie, there really is no greater challenge. This tandem skydive is the ultimate test of bravery for all thrill seekers, as you plummet from the plane. After your short briefing you will be kitted up in a jumpsuit ready to board the plane. An anxious 25-minute flight to reach the jump height will give you all the time you need to test your nerves to their limits, before you’re finally ready to take that leap of faith. Once harnessed to your fully qualified tandem partner, there is no going back as you fall through the sky, reaching speeds of 120mph. A truly unique sensation! Once you reach around 5000ft the instructor will deploy the parachute and you’ll float back down to solid ground, completing a memory that will stay with you for the rest of your life.</p>
+       <p>{{ str }} </p>
     </div>
 
 
@@ -20,7 +20,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 export default {
 
+    data(){
+        return{
+          str: 'For the spirited adrenaline junkie, there really is no greater challenge. This tandem skydive is the ultimate test of bravery for all thrill seekers, as you plummet from the plane. After your short briefing you will be kitted up in a jumpsuit ready to board the plane. An anxious 25-minute flight to reach the jump height will give you all the time you need to test your nerves to their limits, before you’re finally ready to take that leap of faith. Once harnessed to your fully qualified tandem partner, there is no going back as you fall through the sky, reaching speeds of 120mph. A truly unique sensation! Once you reach around 5000ft the instructor will deploy the parachute and you’ll float back down to solid ground, completing a memory that will stay with you for the rest of your life.',
+
+        }
+    },
+
     mounted(){
+
+
         gsap.registerPlugin(ScrollTrigger);
          gsap.set('.container1', {
              opacity:0,
@@ -41,14 +50,13 @@ export default {
                 scrub: true
             }
         })
-
-
     }
 
 }
 </script>
 
 <style scoped>
+
 .container1{
     display: flex;
     width: 100%;

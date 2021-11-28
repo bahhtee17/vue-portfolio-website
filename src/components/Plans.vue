@@ -1,34 +1,116 @@
 <template>
-  <div class="container">
-<button @click="change = !change">Animation</button>
-<transition name="scale"
-enter-active-class="animate__animated animate__tada" leave-active-class="animate__animated animate__bounceOutRight">
-    <div v-if="change" class="first-time">
-
-     </div>
-</transition>
+  <div class="container-plan">
 
 
-
-     <div class="monthly">
+    <div @mouseover="animatedMouseOver('.first-time')" @mouseleave="animatedMouseLeave('.first-time')"  class="first-time">
 
      </div>
 
-     <div class="yearly">
+
+     <div  @mouseover="animatedMouseOver('.monthly')" @mouseleave="animatedMouseLeave('.monthly')" class="monthly">
+
+     </div>
+
+     <div  @mouseover="animatedMouseOver('.yearly')" @mouseleave="animatedMouseLeave('.yearly')" class="yearly">
 
      </div>
   </div>
 </template>
 
 <script>
-import 'animate.css';
-export default {
-    data(){
-        return{
-            change: true
-        }
-    }
 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
+export default {
+data(){
+    return{
+      trigger: false
+    }
+},
+
+methods:{
+
+    animatedMouseOver(className){
+         gsap.to(className, {
+         opacity:0
+      })
+    },
+   animatedMouseLeave(el){
+     gsap.to(el, {
+         opacity:1
+     })
+   }
+
+},
+
+
+
+mounted(){
+     gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+
+
+
+     gsap.set('.first-time', {
+       opacity: 0,
+       x: 700,
+     })
+
+     gsap.to('.first-time', {
+         opacity: 1,
+         x: 0,
+         duration: 10,
+         ease: "back.out(1.7)",
+         scrollTrigger:{
+             trigger: '.container-plan',
+             start: 'top 90%',
+             end: 'top 20%',
+             markers: true,
+             scrub: true,
+         }
+     })
+
+     gsap.set('.monthly', {
+         opacity: 0,
+         x: 700
+     })
+
+     gsap.to('.monthly', {
+         opacity: 1,
+         x: 0,
+         duration: 11,
+         ease: "back.out(1.7)",
+         scrollTrigger: {
+             trigger: '.container-plan',
+             start: 'top 90%',
+             end: 'top 20%',
+             markers: true,
+             scrub: true
+         }
+     })
+
+     gsap.set('.yearly', {
+         opacity: 0,
+         x: 700
+     })
+
+     gsap.to('.yearly', {
+         opacity: 1,
+         x: 0,
+         duration: 12,
+         ease: "back.out(1.7)",
+         scrollTrigger: {
+             trigger: '.container-plan',
+             start: 'top 90%',
+             end: 'top 20%',
+             markers: true,
+             scrub: true
+         }
+     })
+}
 }
 </script>
 
@@ -36,7 +118,7 @@ export default {
 
 
 
-  .container{
+  .container-plan{
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -71,7 +153,7 @@ export default {
   }
 
   @media only screen and (max-width:800px){
-      .container{
+      .container-plan{
           height: 50vw;
           flex-direction: column;
       }
