@@ -14,13 +14,18 @@
      <div  @mouseenter="animatedMouseOver('.yearly')" @mouseout="animatedMouseLeave('.yearly')" class="yearly">
 
      </div>
+
+
   </div>
 </template>
 
 <script>
 
+import Scene from "scenejs";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
+
+
 export default {
 data(){
     return{
@@ -30,11 +35,10 @@ data(){
 
 methods:{
 
+
     animatedMouseOver(className){
          gsap.to(className, {
          rotate: 90,
-
-
       })
     },
    animatedMouseLeave(el){
@@ -51,12 +55,29 @@ methods:{
 
 
 mounted(){
+
+     const scene = new Scene({
+            '.container-plan': [
+                {
+                  'background-position': '0 50%'
+                },
+
+                {
+                    'background-position': '50% 100%'
+                }
+            ]
+        },
+        {
+            duration: 10,
+            easing: Scene.EASE_IN_OUT,
+            selector:true,
+            direction: 'alternate',
+            iterationCount: "infinite",
+        }).playCSS();
+
+
+
      gsap.registerPlugin(ScrollTrigger);
-
-
-
-
-
 
      gsap.set('.first-time', {
        opacity: 0,
@@ -122,11 +143,14 @@ mounted(){
 
 
 
+
   .container-plan{
+      background-position: 0 50%;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      background: linear-gradient(to right, #A7A7E0, #99F7D5);
+      background: linear-gradient(45deg, #A7A7E0, #b8d633, #85d819);
+      background-size: 400% 300%;
       width: 100%;
       height: 35vw;
 
@@ -135,14 +159,14 @@ mounted(){
   .first-time{
       border-radius: 5%;
       width: 20%;
-       box-shadow: 10px 10px 5px #9CA1F7;
+       box-shadow: 5px 5px 3px #e3ecba;
       height: 65%;
       background-color: antiquewhite;
   }
 
   .monthly{
       border-radius: 5%;
-      box-shadow: 10px 10px 5px #9CA1F7;
+      box-shadow: 5px 5px 3px #e3ecba;
       width: 20%;
       height: 65%;
       background-color: antiquewhite;
@@ -151,7 +175,7 @@ mounted(){
   .yearly{
       border-radius: 5%;
       width: 20%;
-       box-shadow: 10px 10px 5px #9CA1F7;
+       box-shadow: 5px 5px 3px #e3ecba;
       height: 65%;
       background-color: antiquewhite;
   }
@@ -179,6 +203,8 @@ mounted(){
           width: 60%;
            box-shadow: 3px 3px 5px #9CA1F7;
       }
+
+
   }
 </style>
 

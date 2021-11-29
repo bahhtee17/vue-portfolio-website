@@ -10,7 +10,10 @@
     "animate.css": "^4.1.1",
     "core-js": "^3.6.5",
     "darkmode-js": "^1.5.7",
+    "granim": "^2.0.0",
     "gsap": "^3.8.0",
+    "gsap-then": "^3.0.0",
+    "scenejs": "^1.5.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
